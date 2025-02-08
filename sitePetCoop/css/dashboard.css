@@ -1,0 +1,360 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container-fluid {
+    padding: 1.5rem;
+}
+
+/* Sidebar Styling */
+.list-group-item {
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #495057;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    color: #025959;
+    background-color: #e9ecef;
+    border-radius: 8px;
+}
+
+.list-group-item.active {
+    background-color: #025959;
+    border-color: #025959;
+    border-radius: 8px;
+}
+
+/* Adjust sidebar width */
+.col-md-3 {
+    flex: 0 0 15%;
+    max-width: 15%;
+}
+
+.col-md-9 {
+    flex: 0 0 85%;
+    max-width: 85%;
+}
+
+/* Table Styling */
+.table {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+    border: 1px solid #dee2e6;
+    overflow: hidden; /* Importante para manter as bordas arredondadas */
+    
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 1rem;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: #212529;
+    font-size: 0.9rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Header Styling */
+.product-management h2 {
+    color: #212529;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #025959;
+    border-color: #025959;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.btn-primary:hover {
+    background-color: #014747;
+    border-color: #014747;
+}
+
+.btn-action-container {
+    display: flex;
+    gap: 8px;  /* Espaço entre os botões */
+    justify-content: flex-start;
+    white-space: nowrap;
+    min-width: 140px;  /* Minimum width to ensure buttons stay side by side */
+}
+
+.btn-warning {  /* Estilo para o botão de editar */
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    color: #212529;
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: #212529;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 0.8rem;
+}
+
+.form-control:focus {
+    border-color: #025959;
+    box-shadow: 0 0 0 0.2rem rgba(2, 89, 89, 0.25);
+}
+
+/* Alert Styling */
+.alert {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Image Preview */
+.table img {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Action Buttons */
+.btn-group .btn {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* Checkbox Styling */
+.form-check-input:checked {
+    background-color: #025959;
+    border-color: #025959;
+}
+
+/* File Input Styling */
+.form-control-file {
+    padding: 0.375rem 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px dashed #dee2e6;
+}
+
+/* Image Modal Styling */
+.image-preview {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.image-preview:hover {
+    transform: scale(1.1);
+}
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.image-modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+    color: #025959;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.dashboard-container {
+    max-width: 100%;
+    padding: 20px;
+    overflow-x: hidden;  /* Previne scroll horizontal */
+}
+
+.produtos-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.produtos-table {
+    width: 100%;
+    margin-left: 0;  /* Remove margem à esquerda */
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;  /* Permite scroll horizontal apenas na tabela se necessário */
+    margin: 0;  /* Remove margens */
+}
+
+@media (max-width: 768px) {
+    .produtos-section {
+        padding: 10px;
+    }
+    
+    .dashboard-container {
+        padding: 10px;
+    }
+}
+
+/* Dropdown Menu Styling */
+.products-dropdown .sub-item {
+    padding-left: 2.5rem;
+    font-size: 0.9rem;
+    background-color: #f8f9fa;
+}
+
+.products-dropdown .sub-item:hover {
+    background-color: #e9ecef;
+}
+
+.dropdown-toggle::after {
+    float: right;
+    margin-top: 8px;
+}
+
+#productsCollapse {
+    border-left: 3px solid #025959;
+    margin-left: 1rem;
+}
+
+/* Make buttons slightly smaller if needed */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Search Sidebar Styling */
+.search-sidebar {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f2f5;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-input:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px #025959;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1rem;
+    pointer-events: none;
+}

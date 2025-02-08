@@ -1,0 +1,156 @@
+html{
+    scroll-behavior: smooth;
+}
+
+* {             /*  adiciona reset em TODO o site */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #025959;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+  /* formatacao da barra de rolagem */
+body::-webkit-scrollbar {
+    width: 12px;                /* largura da barra de rolagem */
+    background-color: #038C7F;
+}
+
+body::-webkit-scrollbar-track {
+    background: #038C7F;           /* cor de fundo da barra de rolagem */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #FF9770;  /* cor do scroll (thumb) da barra de rolagem */
+    border-radius: 20px;          /* arredondar o scroll (thumb) */
+    border: 3px solid #038C7F;     /* criar um espaco em volta do scroll */
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #025959;
+    color: #f0f0f0;
+    border-top: 2px solid #ff6347;
+    padding-block: 1rem;
+    width: 100%;
+    font-family: Poppins, serif;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.companyInfo {
+    text-align: left;
+}
+
+.companyInfo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f0f0f0;
+}
+
+.companyInfo p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.credits {
+    text-align: right;
+}
+
+.credits p {
+    font-size: 0.875rem;
+    color: #e0e0e0;
+}
+
+.credits a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Altura fixa para todos os cards */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 150px; /* Altura máxima para as imagens */
+    object-fit: cover; /* Ajustar a imagem para cobrir o espaço */
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card .price {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card .details-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #025959;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.card .details-button:hover {
+    background-color: #014747;
+}
+
+

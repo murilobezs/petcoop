@@ -1,0 +1,449 @@
+.header {
+    background-color: #F27052;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 0.5rem;
+    font-size: 1.2rem;
+    font-family: Poppins, Bold;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow to the bottom */
+}
+
+.search-results::-webkit-scrollbar {
+    width: 12px;                /* largura da barra de rolagem */
+    background-color: #038C7F;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: #038C7F;           /* cor de fundo da barra de rolagem */
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background-color: #FF9770;  /* cor do scroll (thumb) da barra de rolagem */
+    border-radius: 20px;          /* arredondar o scroll (thumb) */
+    border: 3px solid #038C7F;     /* criar um espaco em volta do scroll */
+}
+.logoContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.header p {
+    overflow: hidden;
+    font-size: 1rem;
+    display: none;
+}
+
+.header img {
+    width: 70px;
+    height: 70px;
+    margin-left: 1rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.header img:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.2));
+}
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.searchIcon {
+    position: absolute;
+    margin-right: 41rem;
+    color: #025959; /* Change the color of the search icon */
+}
+
+.searchBar {
+    width: 700px;
+    height: 2.5rem; /* Aumenta a altura da barra de pesquisa */
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem; /* Aumenta a distância entre o texto e a lupa */
+    border-radius: 5px;
+    border: none;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-family: Poppins, Regular;
+    transition: all 0.3s ease;
+}
+
+.searchBar:focus {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-results {
+    position: fixed; /* Change to fixed to overlay on top of the header */
+    top: 60px; /* Adjust top to be below the header */
+    left: 53.8%; /* Adjust left to move the box to the right */
+    transform: translateX(-50%);
+    width: 700px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 10001; /* Ensure it is above the header */
+    display: none;
+    padding: 16px 0;
+}
+
+.search-results.active {
+    display: block;
+    animation: dropDown 0.3s ease;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.5s ease;
+    width: 650px;
+    left: 20px;
+}
+
+.search-item:hover {
+    background-color: #f8f9fa;
+   
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+.search-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    padding: 5px;
+}
+
+.search-item-info {
+    flex: 1;
+}
+
+.search-item-name {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+    font-size: 1rem;
+}
+
+.search-item-price {
+    color: #038C7F;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.search-item-category {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-item-category i {
+    font-size: 0.8rem;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navLinks {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+    font-weight: bold;
+    gap: 0.2rem; /* Reduced gap between nav links */
+    font-size: 2rem;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+    padding-inline: 0.5rem;
+    font-size: 1.125rem;
+    position: relative; /* Required for the pseudo-element */
+    transition: all 0.5s ease;
+}
+
+.header a:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.2));
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: #fff; /* Ensure the icons are white */
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 55%; /* Move the hamburger icon up slightly */
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 10000; /* Ensure the hamburger icon is above the navOpen */
+    box-shadow: none; /* Remove shadow */
+    border-radius: 0; /* Remove border-radius */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.navOpen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: #025959;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    justify-content: flex-start;
+    padding-top: 1rem; /* Adjusted padding to move the menu higher */
+    padding-left: 1rem;
+    z-index: 9999;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navOpen.show {
+    transform: translateX(0);
+}
+
+.navOpen a {
+    display: block;
+    padding: 0.75rem;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc; /* Linha divisória */
+}
+
+.navOpen a:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.navOpen a i {
+    margin-right: 0.5rem; /* Add space between icon and text */
+}
+
+.navOpen a p {
+    display: inline; /* Ensure the paragraph is displayed inline */
+    margin: 0; /* Remove default margin */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+    }
+
+    .searchIcon {
+        position: absolute;
+        left: 10px; /* Ensure the icon stays within the input area */
+        color: #025959; /* Change the color of the search icon */
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .navOpen {
+        display: flex;
+    }
+
+    .searchContainer {
+        width: auto;
+        margin-right: 45px;
+    }
+
+    .searchBar {
+        width: 100%;
+    }
+
+    .header p {
+        display: flex;
+    }
+
+    .overlay.show {
+        display: block;
+    }
+
+    .search-results {
+        width: 90%;
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .header img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .searchIcon {
+        position: absolute;
+        left: 10px; /* Ensure the icon stays within the input area */
+        color: #025959; /* Change the color of the search icon */
+    }
+    .searchBar {
+        width: 100%;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .header img {
+        width: 60px;
+        height: 60px;
+    }
+    nav {
+        display: none;
+    }
+
+    .searchIcon {
+        position: absolute;
+        left: 10px; /* Ensure the icon stays within the input area */
+        color: #025959; /* Change the color of the search icon */
+    }
+
+    .searchBar {
+        font-size: 0.65rem;
+    }
+}
+
+
+.search-overlay {
+    display: none;
+}
+
+.search-overlay.active {
+    display: none;
+}
+
+.search-overlay-header {
+    display: none;
+}
+
+.search-overlay-input {
+    display: none;
+}
+
+.search-overlay-close {
+    display: none;
+}
+
+.search-overlay-results {
+    display: none;
+}
+
+.search-overlay-item {
+    display: none;
+}
+
+.search-overlay-item:hover {
+    display: none;
+}
+
+.search-overlay-item img {
+    display: none;
+}
+
+.search-overlay-item-info {
+    display: none;
+}
+
+.search-overlay-item-name {
+    display: none;
+}
+
+.search-overlay-item-price {
+    display: none;
+}
+
+.search-overlay-item-category {
+    display: none;
+}
+
+.search-overlay-bg {
+    display: none;
+}
+
+.search-overlay-bg.active {
+    display: none;
+}
