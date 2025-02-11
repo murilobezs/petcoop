@@ -91,7 +91,6 @@ require_once 'includes/product-card.php';
           </div>
         </div>
 
-        <!-- Seção de Cães -->
         <div class="dogs">
           <h2>Cães</h2>
           <div class="swiper mySwiper">
@@ -108,7 +107,6 @@ require_once 'includes/product-card.php';
           </div>
         </div>
 
-        <!-- Repita o mesmo padrão para outras categorias -->
         <?php
         $categorias = ['gatos', 'pássaros', 'peixes', 'furões', 'roedores'];
         foreach ($categorias as $categoria) {
